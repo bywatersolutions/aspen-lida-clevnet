@@ -31,7 +31,7 @@ export default function TitleWithLogo(props) {
                <View style={{ flexDirection:'row', maxWidth:'100%', width: '100%', paddingLeft:20, paddingTop:5, paddingRight:20, paddingBottom:5, justifyContent:'left', backgroundColor:theme['colors']['primary']['base'] }} >
                     {navigation.canGoBack() && !hideBack && (
                        <Pressable onPress={() => navigation.goBack()} mr={3} hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }} >
-                            <ChevronLeftIcon size={5} color="primary.baseContrast" />
+                            <ChevronLeftIcon size={5} color={theme['colors']['primary']['baseContrast']} />
                        </Pressable>
                      )}
                     <Text style={{color:theme['colors']['primary']['baseContrast'], fontSize:18, lineHeight:22, fontWeight:'bold'}} numberOfLines={1} ellipsizeMode="tail">{props.title}</Text>
