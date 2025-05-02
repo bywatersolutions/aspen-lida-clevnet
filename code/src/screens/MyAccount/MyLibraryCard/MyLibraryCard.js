@@ -8,7 +8,7 @@ import moment from 'moment';
 import { Box, Button, Center, Flex, Icon, Image, Modal, Text, useColorModeValue, useContrastText } from 'native-base';
 import React from 'react';
 import { Dimensions } from 'react-native';
-import Barcode from 'react-native-barcode-expo';
+import Barcode from 'react-native-barcode-aspen';
 import { Extrapolate, interpolate, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import Carousel from 'react-native-reanimated-carousel';
 
@@ -347,7 +347,7 @@ const CreateLibraryCard = (data) => {
                ) : null}
                <Center>
                     {showExpirationDate && expirationDate && !neverExpires && numCards > 1 ? <Text color={cardText}>{expirationText}</Text> : null}
-                    {numCards > 1 ? <OpenBarcode barcodeValue={barcodeValue} barcodeFormat={barcodeStyle} handleBarcodeError={handleBarcodeError} language={language} /> : <Barcode value={barcodeValue} format={barcodeStyle} text={barcodeValue} background="warmGray.100" onError={handleBarcodeError} />}
+                    {numCards > 1 ? <OpenBarcode barcodeValue={barcodeValue} barcodeFormat={barcodeStyle} handleBarcodeError={handleBarcodeError} language={language} /> : <Barcode value={barcodeValue} textSize={20} format={barcodeStyle} text={barcodeValue} background="warmGray.100" onError={handleBarcodeError} />}
                     {showExpirationDate && expirationDate && !neverExpires && numCards === 1 ? (
                          <Text color={cardText} fontSize={10} pt={2}>
                               {expirationText}
@@ -481,7 +481,7 @@ const OpenBarcode = (data) => {
                <Modal isOpen={showModal} onClose={() => toggleModal()} size="xl" _backdrop={{ opacity: 75 }}>
                     <Modal.Content bgColor="white">
                          <Modal.Body bgColor="white">
-                              <Barcode value={barcodeValue} format={barcodeFormat} text={barcodeValue} onError={handleBarcodeError} />
+                              <Barcode value={barcodeValue} textSize={20} format={barcodeFormat} text={"test value here"} onError={handleBarcodeError} />
                          </Modal.Body>
                     </Modal.Content>
                </Modal>
