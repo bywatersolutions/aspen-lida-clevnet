@@ -58,7 +58,7 @@ export const SelfRegistration = () => {
 						const {label, properties} = section;
 						return (
 							<Box mb="$5">
-							<Text bold fontSize="16">{label}</Text>
+							<Text bold fontSize="16" color={textColor}>{label}</Text>
 							{_.map(properties, function(field, key) {
 							const {type, description, maxLength, required, property} = field;
 							const fieldLabel = field.label;
@@ -72,6 +72,7 @@ export const SelfRegistration = () => {
 										                   maxLength={parseInt(maxLength)}
 										                   accessibilityLabel={description}
 										                   returnKeyType="next"
+										                   color={textColor}
 										                   onChangeText={(value) => {
 											                   console.log(property, value);
 											                   handleInputChange(property, value);
@@ -94,6 +95,7 @@ export const SelfRegistration = () => {
 										                   name={property}
 										                   maxLength={parseInt(maxLength)}
 										                   accessibilityLabel={description}
+										                   color={textColor}
 										                   onChangeText={(value) => {
 											                   handleInputChange(property, value);
 										                   }}/>
@@ -116,6 +118,7 @@ export const SelfRegistration = () => {
 										                   name={property}
 										                   maxLength={parseInt(maxLength)}
 										                   accessibilityLabel={description}
+										                   color={textColor}
 										                   onChangeText={(value) => {
 											                   handleInputChange(property, value);
 										                   }} /></Input>
@@ -136,18 +139,14 @@ export const SelfRegistration = () => {
 										<Select
 											name={property}
 											accessibilityLabel={description}
-											_selectedItem={{
-												bg: 'tertiary.300',
-												endIcon: <CheckIcon size="5" />,
-											}}
 											onValueChange={(value) => {
 												handleInputChange(property, value);
 											}}
 										>
 											<SelectTrigger variant="outline" size="md">
-												<SelectInput placeholder="Select option" />
+												<SelectInput placeholder="Select option" color={textColor}/>
 												<SelectIcon mr="$3">
-													<Icon as={ChevronDownIcon} />
+													<Icon as={ChevronDownIcon} color={textColor}/>
 												</SelectIcon>
 											</SelectTrigger>
 											<SelectPortal>

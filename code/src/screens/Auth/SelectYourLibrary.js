@@ -105,6 +105,7 @@ export const SelectYourLibrary = (payload) => {
                                                placeholder={getTermFromDictionary('en', 'search')}
                                                value={query}
                                                onChangeText={(text) => setQuery(text)}
+                                               color={textColor}
                                    />
                                    {query ? <InputSlot onPress={() => clearSearch()}>
                                         <InputIcon as={MaterialCommunityIcons} name="close-circle" mr="$2" color={textColor} />

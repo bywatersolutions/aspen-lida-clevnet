@@ -230,6 +230,7 @@ export const GetLoginForm = (props) => {
                                             passwordRef.current.focus();
                                        }}
                                        blurOnSubmit={false}
+                                     color={textColor}
                          />
                          {allowBarcodeScanner ?
                               <InputSlot onPress={() => openScanner()}>
@@ -254,6 +255,7 @@ export const GetLoginForm = (props) => {
                                           await initialValidation();
                                      }}
                                      required
+                                     color={textColor}
                          />
                          <InputSlot onPress={toggleShowPassword}>
                               <InputIcon as={Ionicons} name={showPassword ? 'eye-outline' : 'eye-off-outline'} mr="$2" color={textColor} />
