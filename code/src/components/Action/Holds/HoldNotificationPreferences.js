@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { getTermFromDictionary, getTranslationsWithValues } from '../../../translations/TranslationService';
 
 export const HoldNotificationPreferences = (props) => {
-     const { textColor, theme, user, url, language, emailNotification, setEmailNotification, phoneNotification, setPhoneNotification, smsNotification, setSMSNotification, smsCarrier, setSMSCarrier, smsNumber, setSMSNumber, phoneNumber, setPhoneNumber } = props;
+     const { textColor, theme, user, url, language, emailNotification, setEmailNotification, phoneNotification, setPhoneNotification, smsNotification, setSMSNotification, smsCarrier, setSMSCarrier, smsNumber, setSMSNumber, phoneNumber, setPhoneNumber, colorMode } = props;
 
      const holdNotificationInfo = user.holdNotificationInfo;
      const smsCarriers = holdNotificationInfo.smsCarriers;

@@ -9,7 +9,7 @@ import _ from 'lodash';
 import { getTermFromDictionary } from '../../../translations/TranslationService';
 
 export const SelectVolume = (props) => {
-     const { id, volume, setVolume, showModal, promptForHoldType, holdType, setHoldType, language, url, textColor, theme } = props;
+     const { id, volume, setVolume, showModal, promptForHoldType, holdType, setHoldType, language, url, textColor, theme, colorMode } = props;
 
      const { status, data, error, isFetching } = useQuery({
           queryKey: ['volumes', id, url],

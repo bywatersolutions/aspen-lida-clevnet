@@ -242,7 +242,7 @@ export const Settings_PickupLocations = () => {
 				</FormControl>
 			</>
 			) : null}
-			<SelectNewHoldSublocation sublocations={PATRON.sublocations} location={location} activeSublocation={sublocation} setActiveSublocation={setSublocation} language={language} textColor={textColor} theme={theme} />
+			<SelectNewHoldSublocation sublocations={PATRON.sublocations} location={location} activeSublocation={sublocation} setActiveSublocation={setSublocation} language={language} textColor={textColor} theme={theme} colorMode={colorMode} />
 			{library.allowRememberPickupLocation ? (
 				<FormControl mb="$3">
 					<Checkbox
