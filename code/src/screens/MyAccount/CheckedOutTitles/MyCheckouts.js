@@ -378,8 +378,10 @@ export const MyCheckouts = () => {
                                              setRenewAll(false);
                                         });
                                    }}>
-                                   <ButtonIcon color={theme['colors']['primary']['500-text']}  as={MaterialIcons} name="autorenew" />
-                                   <ButtonText color={theme['colors']['primary']['500-text']}>{getTermFromDictionary(language, 'checkout_renew_all')}</ButtonText>
+                                   {!renewAll && <ButtonIcon color={theme['colors']['primary']['500-text']} as={MaterialIcons} name="autorenew" />}
+                                   <ButtonText color={theme['colors']['primary']['500-text']}>
+                                        {renewAll ? getTermFromDictionary(language, 'renewing_all', true) : getTermFromDictionary(language, 'checkout_renew_all')}
+                                   </ButtonText>
                               </Button>
                               <Button
                                    borderColor={theme['colors']['primary']['500']}
